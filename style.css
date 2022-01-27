@@ -327,6 +327,7 @@ header {
   position: fixed;
   width: 100%;
   z-index: 999;
+  box-shadow: rgb(0, 0, 0, 30%) 0px 3px 5px;
 }
 header nav {
   font-size: 1.6rem;
@@ -357,29 +358,16 @@ header nav {
   box-shadow: rgb(0, 0, 0, 25%) 0px 4px 5px;
 }
 .login-container {
-  background-color: #fff;
   height: 4rem;
   width: 9rem;
-  border-radius: 0.6rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-  background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0.6, #b671cf),
-    color-stop(0.1, #3a30aa)
-  );
 }
 .login {
+  border: 0.1rem solid #b671cf;
+  border-radius: 0.5rem;
   padding: 0.8rem 1.2rem;
   width: 8.8rem;
   height: 3.8rem;
-  border-radius: 0rem;
   font-weight: 500;
-  border: none;
   position: relative;
   background-color: #fff;
 }
@@ -398,35 +386,41 @@ header nav {
 .pack-buttons {
   padding-top: 10rem;
 }
-.customPack {
+.allAccessPack {
   background: linear-gradient(to right, #b06dcd, #8757c1);
-  width: 35rem;
-  height: 4rem;
+  width: 37rem;
+  height: 6rem;
   border-radius: 0.5rem;
   color: white;
-  font-weight: 500;
-  margin-left: 13%;
-  font-size: 1.8rem;
+  font-weight: 700;
+  font-size: 2.2rem;
   box-shadow: rgb(0, 0, 0, 25%) 0px 4px 5px;
+  position: relative;
 }
-.allPack {
-  background: linear-gradient(
-    170deg,
-    #e9d2e9 10%,
-    #e9d2e981 20%,
-    #e9d2e9 30%,
-    #e9d2e92f
-  );
-  width: 20rem;
+.allAccessPack .play {
+  width: 6rem;
+  height: 6.5rem;
+  border-radius: 50%;
+  opacity: 0.5;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-30%, -50%);
+}
+.allAccessPack::after {
+  content: "";
+  width: 4rem;
   height: 4rem;
-  border-radius: 0.5rem;
-  color: #8757c1;
-  font-weight: 500;
-
-  box-shadow: rgb(0, 0, 0, 25%) 0px 4px 5px;
-  margin-left: 2rem;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.18;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+  overflow: hidden;
+  /* border-right: solid 0.4rem rgba(0, 0, 0, 0.144); */
 }
-
 main {
   width: 75vw;
   margin: 4rem auto 0;
@@ -437,15 +431,15 @@ main {
   padding-right: 0;
 }
 .card-light {
-  margin: 4rem auto 1rem;
+  margin: 3rem auto 1rem;
   width: 100%;
   padding: 1.2rem 0rem;
   color: #800780;
   background: linear-gradient(
     170deg,
-    #e9d2e9 10%,
+    #e9d3e9 10%,
     #e9d2e981 20%,
-    #e9d2e9 30%,
+    #e9d3e9 30%,
     #e9d2e92f
   );
   text-align: center;
@@ -456,28 +450,40 @@ h2 {
 h1 strong {
   font-size: 4rem;
 }
-h1 span {
-  text-decoration: line-through;
-  opacity: 0.7;
-}
+
 main img {
-  width: 50%;
-  height: 40rem;
   border-radius: 2rem;
+  width: 100%;
+  height: 100%;
+}
+.mainImg {
+  width: 60%;
+  height: 45rem;
+  position: relative;
+}
+.mainImg::after {
+  content: "PLUG TO YOUR GLOBAL POTENTIAL WITH THE \A POWERFUL \A HANDCRAFTED COURSE PACK";
+  color: #a39bd7;
+  white-space: pre-wrap;
+  width: 80%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 35%);
+  z-index: 9;
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-align: center;
 }
 main .disFlex {
-  margin: 5rem auto;
-  gap: 8rem;
+  margin: 3rem auto;
   text-align: left;
-  font-size: 2rem;
+  font-size: 4rem;
   align-items: center;
-  font-weight: 600;
+  font-weight: 700;
 }
-main .disFlex p:nth-child(2) {
-  font-weight: 500;
-  margin-top: 4rem;
-}
-.selected-courses {
+
+/* .selected-courses {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -497,7 +503,7 @@ main .disFlex p:nth-child(2) {
   color: #800780;
   box-shadow: rgb(0, 0, 0, 25%) 0px 4px 5px;
   z-index: 999;
-}
+} */
 
 .course-grid {
   display: grid;
@@ -512,29 +518,21 @@ main .disFlex p:nth-child(2) {
 }
 .course {
   background: linear-gradient(to right, #b06dcd, #8757c1);
-  height: 11rem;
+  height: 10rem;
   border-radius: 1rem;
   box-shadow: rgb(0, 0, 0, 25%) 0px 4px 5px;
   padding: 0 2%;
 }
 .view {
   border: 0.2rem #fff solid;
-  border-radius: 1.2rem;
+  border-radius: 1rem;
   color: #fff;
-  width: 7rem;
-  height: 5rem;
+  width: 9rem;
+  height: 4rem;
   background: none;
   margin-right: 1rem;
 }
-.add-course {
-  border-radius: 1.2rem;
-  color: #800780;
-  width: 11rem;
-  height: 5rem;
-  background: #fff;
-  font-weight: 500;
-  box-shadow: rgb(0, 0, 0, 25%) 0px 4px 3px;
-}
+
 .proceed {
   color: #fff;
   font-size: 1.8rem;
@@ -598,6 +596,69 @@ main .disFlex p:nth-child(2) {
   margin-top: 3rem;
   box-shadow: rgb(0, 0, 0, 25%) 0px 4px 5px;
 }
+
+.overview {
+  background: #fff;
+  width: 75vw;
+  border-radius: 1.5rem;
+  margin: 6rem auto;
+  padding: 2rem;
+  color: #800780;
+  font-size: 1.8rem;
+  box-shadow: rgb(0, 0, 0, 30%) 0px 3px 5px;
+}
+.overview .disFlex {
+  color: #000;
+  align-items: stretch;
+  justify-content: start;
+}
+.overview .disFlex p {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+  text-align: left;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.overview .card {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 0.3rem;
+}
+.overview .card .book {
+  width: 10%;
+  max-width: 2rem;
+  min-width: 2rem;
+  height: 2rem;
+  margin-top: 0.3rem;
+}
+.overview-images {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+}
+.overview-colFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  width: 15rem;
+  font-weight: 600;
+  font-size: 1.6rem;
+  text-align: center;
+}
+.overview-images img {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  border: #8255c0 0.2rem solid;
+  box-shadow: rgb(0, 0, 0, 30%) 0px 3px 5px;
+}
+
 .refund-sec {
   background: #fff;
   color: #800780;
@@ -688,39 +749,12 @@ main .disFlex p:nth-child(2) {
   font-weight: 500;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-.course-ico {
-  width: 20rem;
-  height: 20rem;
-}
-.read-ico {
-  width: 10rem;
-}
-.course-ico div {
-  background: #fff;
-  width: 18rem;
-  height: 18rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.tick {
-  margin-top: 2rem;
-}
+
 .arrow {
   width: 8rem;
   margin-bottom: 4rem;
 }
-.arrow-3 {
-  width: 48rem;
-  margin-bottom: 2rem;
-}
-.full-refund {
-  padding-left: 2rem;
-  font-size: 1.6rem;
-  justify-content: start;
-  gap: 2rem;
-}
+
 /*********************************************/
 
 .arrow-5 {
@@ -728,15 +762,22 @@ main .disFlex p:nth-child(2) {
   margin-left: -2rem;
 }
 .arrow-6 {
-  margin-top: -28rem;
+  margin-top: -39rem;
   margin-left: -6.5rem;
 }
+.hex-container-container {
+  height: 60rem;
+}
 .hex-container {
-  width: 22rem;
-  height: 37rem;
+  width: 20rem;
+  height: 29rem;
   display: flex;
   flex-direction: column;
   position: relative;
+  margin-left: 0.5rem;
+}
+.hex-container img {
+  width: 100%;
 }
 .hex-container::after {
   content: "Total Courses in the PACK";
@@ -748,90 +789,6 @@ main .disFlex p:nth-child(2) {
   bottom: 4rem;
   left: 50%;
   transform: translate(-50%, 0%);
-}
-.hex1 {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-25%, -15%);
-}
-.hex2 {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-67%, 35%);
-}
-.hex3 {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-23%, 24%);
-}
-.hex4 {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-67%, 45%);
-}
-.hex {
-  width: 13rem;
-  height: 13rem;
-  background: #fff;
-  -webkit-clip-path: polygon(
-    50% 0%,
-    95% 25%,
-    95% 75%,
-    50% 100%,
-    5% 75%,
-    5% 25%
-  );
-  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-  position: relative;
-}
-.hex1::after,
-.hex2::after,
-.hex3::after,
-.hex4::after {
-  color: #fff;
-  font-size: 1.4rem;
-  width: 10rem;
-  font-weight: 600;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -70%);
-}
-.hex1::after {
-  content: "COURSE 1";
-}
-.hex2::after {
-  content: "COURSE 2";
-}
-.hex3::after {
-  content: "COURSE 3";
-}
-.hex4::after {
-  content: "COURSE 4";
-}
-.hex::before {
-  content: "";
-  background: linear-gradient(to bottom, #b671cf, #3a30aa);
-  width: 12rem;
-  height: 12rem;
-  -webkit-clip-path: polygon(
-    50% 0%,
-    95% 25%,
-    95% 75%,
-    50% 100%,
-    5% 75%,
-    5% 25%
-  );
-  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 /*********************************************/
@@ -987,7 +944,13 @@ main .disFlex p:nth-child(2) {
   right: 0;
 }
 .mfull-refund {
-  display: none;
+  width: 32rem;
+  height: 7rem;
+  margin: 1rem auto 0;
+  padding: 0.5rem;
+  color: #fff;
+  background: linear-gradient(180deg, #b872d0 0%, #372faa 100%);
+  border-radius: 1.2rem;
 }
 .confusion {
   font-size: 1.2rem;
@@ -1209,17 +1172,16 @@ footer a {
     width: 60rem;
   }
   .pack-buttons {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    justify-content: center;
     padding: 10rem 1rem 0;
+    color: #8a158a;
+    font-size: 1.4rem;
+    font-weight: 500;
   }
-  .customPack,
-  .allPack {
-    width: 20rem;
-    margin: 0;
+  .pack-buttons h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
   }
+
   main.card {
     margin: 0 !important;
     width: 100vw;
@@ -1230,9 +1192,12 @@ footer a {
     align-items: center;
     flex-direction: column;
   }
-  main img {
+  .mainImg {
     width: 35rem;
-    height: 27rem;
+    height: 35rem;
+  }
+  .mainImg::after {
+    font-size: 1.3rem;
   }
 
   .course-grid {
@@ -1251,9 +1216,7 @@ footer a {
   .refund-tenure {
     flex-direction: column;
   }
-  .one-course-pack {
-    display: none;
-  }
+
   .four-course-pack {
     border: none;
     margin-top: 4rem;
@@ -1264,6 +1227,26 @@ footer a {
     flex-direction: column;
     gap: 4rem;
   }
+
+  .overview {
+    width: 95vw;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .overview .disFlex {
+    flex-direction: column;
+    text-align: left;
+    gap: 0;
+    height: auto !important;
+    margin-bottom: 2rem;
+  }
+  .overview .card {
+    background: none;
+    margin: 0;
+    width: auto;
+    padding: 0 1rem;
+  }
+
   .arrow-6 {
     transform: rotate(90deg);
     margin: auto 0;
@@ -1276,7 +1259,7 @@ footer a {
     margin: 0 auto;
   }
   .hex-container-container {
-    height: 33rem;
+    height: 24rem;
   }
   .circle-container {
     width: 100%;
@@ -1284,10 +1267,9 @@ footer a {
   }
   .arrow-7 {
     transform: rotate(90deg);
-    margin: 0;
+    margin: 4rem 0;
   }
   .mfull-refund {
-    display: inline;
     width: 92%;
     height: 7rem;
     margin: 0 auto;
@@ -1336,7 +1318,7 @@ footer a {
     justify-content: space-between; */
     padding: 1.1rem 1rem 1.1rem;
     background-color: white;
-    box-shadow: rgb(0, 0, 0, 30%) 0px 3px 5px;
+    box-shadow: rgb(0, 0, 0, 10%) 0px 2px 1px;
   }
   .logo {
     width: 13.5rem;
@@ -1356,8 +1338,6 @@ footer a {
     font-size: 1.3rem;
   }
   .login {
-    border: 0.1rem solid #b671cf;
-    border-radius: 0.5rem;
     width: 6rem;
   }
   .sign-up {
@@ -1380,17 +1360,12 @@ footer a {
     display: block;
   }
   .pack-buttons {
-    padding-top: 7rem;
+    padding-top: 8rem;
   }
-  .customPack,
-  .allPack {
-    width: 18rem;
-    height: 3.5rem;
-    font-size: 1.6rem;
-  }
+
   .card-light {
     font-size: 1.6rem;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
   }
   .card-light strong {
     font-size: 1.8rem;
@@ -1405,6 +1380,19 @@ footer a {
     padding: 2rem 0 3rem;
     font-size: 1.3rem;
   }
+
+  .overview-images {
+    gap: 0;
+    justify-content: space-around;
+  }
+  .overview-colFlex {
+    font-size: 1.4rem;
+  }
+  .overview-images img {
+    width: 10rem;
+    height: 10rem;
+  }
+
   .refund-sec {
     margin-top: 10rem;
     padding-top: 4rem;
