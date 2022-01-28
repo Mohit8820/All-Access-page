@@ -721,6 +721,7 @@ main .disFlex {
   border-radius: 1.5rem;
   margin: 2rem auto;
   position: relative;
+  background-color: #fcfcfc;
   font-size: 1.6rem;
 }
 .fade-border h3 {
@@ -797,7 +798,26 @@ main .disFlex {
   position: relative;
   align-self: center;
   height: 35rem;
+  width: 35vw;
+  overflow: scroll;
 }
+
+.next-btn {
+  border-radius: 50%;
+  background: #8a158a;
+  border: none;
+  color: white;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  position: absolute;
+  top: 18%;
+  right: -3%;
+  /* transform: translate(-50%, 50%); */
+  box-shadow: rgb(0, 0, 0, 30%) 0px 3px 5px;
+  z-index: 9;
+}
+
 .circle-container p {
   font-size: 1.5rem;
   width: 30rem;
@@ -825,9 +845,19 @@ main .disFlex {
 }
 .circle4 {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   height: 11rem;
-  margin-right: 4rem;
+}
+.circle5 {
+  position: relative;
+  z-index: 2;
+  height: 11rem;
+}
+.circle6 {
+  position: relative;
+  z-index: 2;
+  height: 11rem;
+  margin-right: 2rem;
 }
 .circle {
   background: linear-gradient(to bottom, #b671cf, #3a30aa);
@@ -862,7 +892,9 @@ main .disFlex {
 .circle1::before,
 .circle2::before,
 .circle3::before,
-.circle4::before {
+.circle4::before,
+.circle5::before,
+.circle6::before {
   content: "";
   width: 0.3rem;
   height: 6rem;
@@ -875,13 +907,16 @@ main .disFlex {
   z-index: -1;
 }
 .circle2::before,
-.circle4::before {
+.circle4::before,
+.circle6::before {
   height: 18rem;
 }
 .circle1::after,
 .circle2::after,
 .circle3::after,
-.circle4::after {
+.circle4::after,
+.circle5::after,
+.circle6::after {
   width: 9.5rem;
   height: 6.5rem;
   border-radius: 0.5rem;
@@ -897,12 +932,14 @@ main .disFlex {
   padding: 0.2rem;
 }
 .circle1::after,
-.circle3::after {
+.circle3::after,
+.circle5::after {
   bottom: -6.3rem;
   left: 1.8rem;
 }
 .circle2::after,
-.circle4::after {
+.circle4::after,
+.circle6::after {
   bottom: -14.5rem;
   left: 1.8rem;
 }
@@ -917,6 +954,18 @@ main .disFlex {
 }
 .circle4::after {
   content: "unlocks when 4th course is completed";
+}
+.circle5::after {
+  content: "unlocks when 5th course is completed";
+}
+.circle6::after {
+  content: "unlocks when 6th course is completed";
+}
+.more {
+  min-width: 10rem;
+  margin-right: 2rem;
+  height: 5rem;
+  margin-top: 4rem;
 }
 .line {
   width: 95%;
@@ -1261,8 +1310,10 @@ footer a {
     height: 24rem;
   }
   .circle-container {
-    width: 100%;
-    overflow: scroll;
+    width: 70vw;
+  }
+  .next-btn {
+    display: none;
   }
   .arrow-7 {
     transform: rotate(90deg);
@@ -1413,10 +1464,7 @@ footer a {
     transform: translate(0%, 0%);
     margin-left: 1rem;
   }
-  .circle-container {
-    width: 70vw;
-    overflow: scroll;
-  }
+
   .complete-refund-para {
     border-radius: 1.5rem;
     border: solid #8757c1 0.2rem;

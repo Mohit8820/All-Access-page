@@ -88,3 +88,10 @@ for (var i = 0; i < 4; i++) {
     $(this).toggleClass("active-query", 500);
   });
 }
+
+//  slide
+const button = document.getElementById("slide");
+
+button.onclick = function () {
+  document.getElementById("next").scrollLeft += 90;
+};
